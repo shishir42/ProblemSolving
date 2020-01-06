@@ -4,7 +4,7 @@ public class SingleLinkedListMain {
 
 	public static void main(String[] args) {
 		SingleLinkedList list = new SingleLinkedList();
-		list.createSingleLinkedList(5);
+		list.createSingleLinkedList(5);		
 		list.traverseLinkedList();
 		
 		System.out.println("************************************************");
@@ -50,7 +50,7 @@ public class SingleLinkedListMain {
 		list.traverseLinkedList();
 		System.out.println();
 		
-		
+		System.out.println("*********************End*********************");
 //		list.deleteAllNodeFromLinkedList();
 //		list.createSingleLinkedList(100);
 //		list.traverseLinkedList();
