@@ -57,5 +57,8 @@ public class SingleLinkedListMain {
 //		list.deletionOfNode(1);
 //		System.out.println("Delete After Node Creation");
 //		list.traverseLinkedList();
+		
+		list.reverseLinkedList();
+		list.traverseLinkedList();
 	}
 }

@@ -68,6 +68,16 @@ public class SingleLinkedList {
 	private SingleNode head;
 	private SingleNode tail;
 	private int size;
+	
+	//used in stack implementation
+	public SingleNode getHead() {
+		return this.head;
+	}
+
+	//used in stack implementation (for deletion of stack)
+	public void setHead(SingleNode head) {
+		this.head = head;
+	}
 
 	public int getSize() {
 		return size;
@@ -121,9 +131,9 @@ public class SingleLinkedList {
 			node.setNext(head); 
 
 			//Next, we have to point head and new node, then cancelled the linked between head and first node
-			node = head;
+			head = node;
 		}else if(location >= this.size) {// insert at last position 
-			
+
 			//Set the null in the next of new node, so this will indicate that there is no more node 
 			node.setNext(null);
 
@@ -196,7 +206,7 @@ public class SingleLinkedList {
 		}else if (location >= getSize()) { //If location is not in range or equal, then delete last node
 			//Here we have checked >= that means any how user want to delete the last node
 			//if not then if location > this.size then show the error that node is not present
-			
+
 			SingleNode tempNode = head;
 			for (int i = 0; i < getSize() - 1; i++) {
 				tempNode = tempNode.getNext(); //temp node points to 2nd last node
@@ -215,7 +225,7 @@ public class SingleLinkedList {
 			for (int i = 0; i < location - 1; i++) {
 				tempNode = tempNode.getNext(); // we need to traverse till we find the previous location
 			}
-			
+
 			tempNode.setNext(tempNode.getNext().getNext()); // delete the required node
 			setSize(getSize()-1);
 		}
@@ -227,5 +237,20 @@ public class SingleLinkedList {
 		head = null;
 		tail = null;
 		System.out.println("Linked List deleted successfully !");
+	}
+
+	void reverseLinkedList() {
+		SingleNode previous = null;
+		SingleNode current = this.head;
+		SingleNode next = null;
+		
+		while(current != null) {
+			next = current.getNext();  //next is pointing to next node
+			current.setNext(previous); //First node of next is set to null means its pointing to reverse node
+			previous = current;  //Move previous node to current node
+			current = next; //Move current node to next node
+		}
+		
+		this.head = previous;
 	}
 }
