@@ -10,6 +10,17 @@ import com.program.Singlelinkedlist.SingleLinkedList;
 //When to avoid
 //Random access not  possible-if we have done some mistake, its costly to rectify 
 
+//Real Application Queue
+//Serving requests on a single shared resource, like a printer.
+//CPU task scheduling.
+//In real life scenario, Call Center phone systems uses Queues to hold people calling them in an order, until a service representative is free.
+//Queue is used in BFS(Breadth First Search) algorithm. It helps in traversing a tree or graph.
+//Queue is also used by Operating systems for job scheduling.
+//Queue is used in networking to handle congestion.
+//When a resource is shared among multiple consumers. Examples include CPU scheduling, Disk Scheduling.
+//When data is transferred asynchronously (data not necessarily received at same rate as sent) between two processes. Examples include IO Buffers, pipes, file IO, etc.
+
+
 public class QueueByLinkedList {
 	SingleLinkedList singleLinkedList;
 	
