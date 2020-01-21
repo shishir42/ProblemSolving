@@ -13,6 +13,8 @@ import java.util.Scanner;
 //Output:
 //1 1 1
 
+//https://www.geeksforgeeks.org/search-insert-and-delete-in-an-unsorted-array/
+
 public class ArrayOperation {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -180,5 +182,31 @@ class ArrayOperationsMethods {
 		for (int i = 0; i < arr.length; i++) 
 			System.out.print(arr[i]+" "); 
 	}
+	
+	// Function to insert x in arr at position pos 
+    public int[] insertX(int n, int arr[], 
+                                int x, int pos) 
+    { 
+        int i; 
+  
+        // create a new array of size n+1 
+        int newarr[] = new int[n + 1]; 
+  
+        // insert the elements from 
+        // the old array into the new array 
+        // insert all elements till pos 
+        // then insert x at pos 
+        // then insert rest of the elements 
+        for (i = 0; i < n + 1; i++) { 
+            if (i < pos - 1) {
+                newarr[i] = arr[i]; 
+            }else if (i == pos - 1) {
+                newarr[i] = x; 
+            }else {
+                newarr[i] = arr[i - 1];
+            }
+        } 
+        return newarr; 
+    } 
 }
 
