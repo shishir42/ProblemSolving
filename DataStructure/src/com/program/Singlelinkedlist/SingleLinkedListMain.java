@@ -24,6 +24,12 @@ public class SingleLinkedListMain {
 		
 		System.out.println("************************************************");
 		
+		System.out.println("From nth node 3" );
+		list.removeNthFromEnd(3);
+		list.traverseLinkedList();
+		
+		System.out.println("************************************************");
+		
 		list.insertInLinkedList(40, 1);
 		list.traverseLinkedList();
 	

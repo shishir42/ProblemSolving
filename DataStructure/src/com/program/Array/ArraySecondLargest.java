@@ -88,8 +88,7 @@ class SecondLargestOperation{
 				first = arr[i];								
 			}
 			else if (arr[i] >= second && arr[i] <= first) {
-				/* If arr[i] is in between first and  
-	               second then update second  */
+				/* If arr[i] is in between first and second then update second  */
 				second = arr[i];
 			}
 		}

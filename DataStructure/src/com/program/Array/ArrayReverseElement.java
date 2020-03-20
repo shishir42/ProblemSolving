@@ -31,6 +31,8 @@ class ReverseElementOperation{
 		int temp;
 		while(start < end)
 		{
+//			System.out.println("Start: " + start);
+//			System.out.println("End: " + end);
 			temp = arr[start];
 			arr[start] = arr[end];
 			arr[end] = temp;

@@ -68,7 +68,7 @@ public class SingleLinkedList {
 	private SingleNode head;
 	private SingleNode tail;
 	private int size;
-	
+
 	//used in stack implementation
 	public SingleNode getHead() {
 		return this.head;
@@ -106,6 +106,11 @@ public class SingleLinkedList {
 		if(existsLinkedList()) {
 			SingleNode tempNode = head;
 			for (int i = 0; i < this.getSize(); i++) {
+				if(tempNode == null)
+				{
+					return;
+				}
+				
 				System.out.println(tempNode.getValue());
 				if(i != this.getSize() - 1) {
 					System.out.println("-->");
@@ -132,7 +137,7 @@ public class SingleLinkedList {
 
 			//Next, we have to point head and new node, then cancelled the linked between head and first node
 			head = node;
-		}else if(location >= this.size) {// insert at last position 
+		}else if(location >= this.size - 1) {// insert at last position 
 
 			//Set the null in the next of new node, so this will indicate that there is no more node 
 			node.setNext(null);
@@ -202,13 +207,14 @@ public class SingleLinkedList {
 			//then it will destroyed the link between head and tail to node
 			if(getSize() == 0) { // if there are no more nodes in this list
 				tail = null;
+				head = null;
 			}
-		}else if (location >= getSize()) { //If location is not in range or equal, then delete last node
+		}else if (location >= getSize()- 1) { //If location is not in range or equal, then delete last node
 			//Here we have checked >= that means any how user want to delete the last node
 			//if not then if location > this.size then show the error that node is not present
 
 			SingleNode tempNode = head;
-			for (int i = 0; i < getSize() - 1; i++) {
+			for (int i = 1; i < getSize(); i++) {
 				tempNode = tempNode.getNext(); //temp node points to 2nd last node
 			}
 
@@ -243,14 +249,32 @@ public class SingleLinkedList {
 		SingleNode previous = null;
 		SingleNode current = this.head;
 		SingleNode next = null;
-		
+
 		while(current != null) {
 			next = current.getNext();  //next is pointing to next node
 			current.setNext(previous); //First node of next is set to null means its pointing to reverse node
 			previous = current;  //Move previous node to current node
 			current = next; //Move current node to next node
 		}
-		
+
 		this.head = previous;
+	}
+	
+	public SingleNode removeNthFromEnd(int n) {
+		SingleNode first = this.head;
+		SingleNode second = this.head;
+		for (int i = 1; i <= n + 1; i++) {
+	        first = first.getNext();
+	    }
+	    // Move first to the end, maintaining the gap
+	    while (first != null) {
+	        first = first.getNext();
+	        second = second.getNext();
+	    }
+	    //second.next = second.next.next;
+	    SingleNode temp1 = second.getNext();
+	    SingleNode temp2 = temp1.getNext();
+	    second.setNext(temp2);
+		return second;
 	}
 }
