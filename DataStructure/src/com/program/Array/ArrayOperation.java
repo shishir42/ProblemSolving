@@ -3,6 +3,9 @@ package com.program.Array;
 import java.util.Arrays;
 import java.util.Scanner;
 
+//literal array: new int[]{1, 2, 3}
+//empty array: new int[] {}
+
 //Input:
 //1
 //5
