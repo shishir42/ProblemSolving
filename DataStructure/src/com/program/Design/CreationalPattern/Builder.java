@@ -1,4 +1,4 @@
-package com.program.Design;
+package com.program.Design.CreationalPattern;
 
 public class Builder {
 	public static void main(String[] args) {
