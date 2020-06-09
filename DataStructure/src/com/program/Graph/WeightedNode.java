@@ -11,6 +11,15 @@ public class WeightedNode implements Comparable<WeightedNode>{
 	private boolean isVisited = false;
 	private WeightedNode parent = null;
 	private int distance;
+	private DisjointSetMain set; 
+	
+	public DisjointSetMain getSet() {
+		return set;
+	}
+
+	public void setSet(DisjointSetMain set) { //used in DisjointSet Algorithm
+		this.set = set;
+	}
 
 	public String getName() {
 		return name;

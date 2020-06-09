@@ -1,5 +1,8 @@
 package com.program.Design;
 
+// https://www.tutorialspoint.com/design_pattern/index.htm
+// https://www.geeksforgeeks.org/software-design-patterns/
+
 public class AbstractFactory {
 	public static void main(String[] args) {
 		CarType cartype = new CarType();
