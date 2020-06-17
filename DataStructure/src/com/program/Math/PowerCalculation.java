@@ -1,12 +1,17 @@
 package com.program.Math;
+import java.time.Instant;
+import java.time.OffsetDateTime;
+import java.util.TimeZone;
 
 public class PowerCalculation {
 
 	public static void main(String[] args) {
+		
+		
 		Power pow = new Power();
 		int value = pow.calPower(2, 2);
 		System.out.println("Value using recursion " + value);
-		
+
 		System.out.println("Value using recursion " + pow.calPowerRecursion(2, 3));
 		System.out.println("Value using recursion " + pow.calPowserRecursion1(2, 3));
 	}
@@ -30,11 +35,11 @@ class Power{
 			return x * calPower(x, y/2) * calPower(x, y/2);
 		}
 	}
-	
+
 	//Time Complexity: O(n)
 	//Space Complexity: O(1)
 	//Algorithmic Paradigm: Divide and conquer
-	
+
 	public int calPowerRecursion(int x, int y)
 	{
 		if(y == 0)
@@ -46,9 +51,9 @@ class Power{
 			return x * calPowerRecursion(x, y-1);
 		}		
 	}
-	
+
 	//Time complexity: O(n)
-	
+
 	public int calPowserRecursion1(int x, int y)
 	{
 		if(y == 0)
@@ -65,7 +70,7 @@ class Power{
 			return x * calPowserRecursion1(x, y - 1);
 		}
 	}
-	
+
 	//Time complexity: Olog(n)
 }
 
