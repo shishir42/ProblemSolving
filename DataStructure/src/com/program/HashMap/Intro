@@ -1,0 +1,23 @@
+Collision Handling 
+
+1. Separate Chaining(Direct Chaining) 
+2. Open Addressing (Linear probing, Quadratic Probing, Double Hashing)
+
+3. The Load factor is a measure that decides when to increase the HashMap capacity to maintain the get() and put() operation complexity of O(1). 
+The default load factor of HashMap is 0.75f (75% of the map size).
+
+The load factor is a measure of how full the hash table is allowed to get before its capacity is automatically increased
+
+When the total number of items in hashmap goes on increasing keeping the default initial capacity of hashmap 16, At one point of time,
+ hashmap performance will start degrading and need to increase buckets for improving performance.
+ 
+ Load Factor is a measure, which decides when exactly to increase the hashmap capacity(buckets) to maintain get and put operation complexity of O(1).
+ 
+ https://javabypatel.blogspot.com/2015/10/what-is-load-factor-and-rehashing-in-hashmap.html
+ 
+Brute force Approach: Using two loops
+Sorting and binary search
+Sorting and two Pointer approach
+Using a Hash Table
+
+https://medium.com/afteracademy/data-structures-and-algorithms-problem-solving-approach-e7cb8ae43b20
