@@ -1,8 +1,9 @@
+//1.
 // Tag: Design
 
 package com.program.LeetCodeDesign;
 
-public class ParkingSystem {
+public class ParkingSystem_1 {
     public static void main(String[] args) {
         ParkingSystemSol parkingSystem = new ParkingSystemSol(1, 1, 0);    
         System.out.println(parkingSystem.addCar(1));
